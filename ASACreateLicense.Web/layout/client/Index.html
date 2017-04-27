@@ -1,0 +1,97 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Công Ty TNHH Hệ Thống Thông Tin Nam Việt Asasoft</title>
+
+
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+   
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="/Assets/client/css/animate.css" rel="stylesheet" />
+    <link href="/Assets/client/css/prettyPhoto.css" rel="stylesheet" />
+    <link href="/Assets/client/css/responsive.css" rel="stylesheet" />
+    <link href="/Assets/client/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Assets/client/css/main.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/Assets/client/images/ico/favicon.png">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link href="/Assets/admin/libs/toastr/toastr.css" rel="stylesheet" />
+    <link href="/Assets/admin/css/custom.css" rel="stylesheet" />
+  
+    <!--<link href="Assets/admin/css/languages.min.css" rel="stylesheet" />-->
+    <base href="/" />
+</head>
+<body class="hold-transition skin-blue sidebar-mini" ng-app="asasoft.home">
+    <header id="navigation">
+        <div class="navbar navbar-inverse navbar-fixed-top" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../Home/Index"><h1><img src="/Assets/client/images/logo.png" alt="logo"></h1></a>
+                </div>
+
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right" id="myTab">
+                        <li class="scroll"><a ui-sref="home">Home </a></li>
+                        <li class="scroll"><a ui-sref="requestlicense">Request license</a></li>
+                        <li class="scroll"><a ui-sref="contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="content-wrapper" ui-view>
+    </div>
+
+    <footer id="footer" style="background-image: linear-gradient(rgb(47, 53, 53), rgb(86, 65, 50))">
+        <div class="container">
+            <div class="text-center">
+                <p style="color:white">Address: 72/10A Tay Thanh Str., Tay Thanh W., Tan Phu D., HCMC || Phone: (+84-8) 3815 8045 || Email: info@asasoft.vn</p>
+                <p style="color:white">All Copyright &copy; 2017  <a href="../Home/Index">Asasoft</a></p>
+            </div>
+        </div>
+    </footer>
+       
+    <script src="/Assets/client/js/jquery.js"></script>
+    <script src="/Assets/client/js/bootstrap.min.js"></script>
+    <script src="/Assets/client/js/jquery.isotope.min.js"></script>
+    
+    <script src="/Assets/client/js/jquery.parallax.js"></script>
+    <script src="/Assets/client/js/jquery.prettyPhoto.js"></script>
+    <script src="/Assets/client/js/main.js"></script>
+    <script src="/Assets/client/js/smoothscroll.js"></script>
+
+    <script src="https://cdn.ckeditor.com/4.4.3/standard/ckeditor.js"></script>
+
+    <script src="/Assets/admin/libs/angular/angular.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js"></script>
+    <script src="/Assets/admin/libs/angular-ui-router/angular-ui-router.js"></script>
+     
+    <script src="/Assets/admin/libs/toastr/toastr.js"></script>
+    <script src="/Assets/admin/libs/bootbox/bootbox.js"></script>
+    <script src="/Assets/admin/libs/ckeditor/ckeditor.js"></script>
+    <script src="/Assets/admin/libs/ckfinder/ckfinder.js"></script>
+    <script src="/Assets/admin/libs/ngBootbox/ngBootbox.js"></script>
+    <script src="/Assets/admin/libs/ng-ckeditor/ng-ckeditor.js"></script>
+
+    <script src="/app/shared/modules/asasoft.common.home.js"></script>
+    <script src="/app/shared/services/apiServiceHome.js"></script>
+    <script src="/app/shared/services/notificationServiceHome.js"></script>
+
+    <script src="/app/apphome.js"></script>
+
+    <script src="/app/components/client/home/homeController.js"></script>
+    <script src="/app/components/client/contact/contactController.js"></script>
+    <script src="/app/components/client/request_license/requestLicenseController.js"></script>
+
+</body>
+</html>

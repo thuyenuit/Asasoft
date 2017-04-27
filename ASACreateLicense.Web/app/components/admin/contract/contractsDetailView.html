@@ -1,0 +1,117 @@
+﻿<section class="content-header">
+    <h1>
+        Contract Information
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a ui-sref="contractlist"> Contract</a></li>
+        <li class="active"> Contract Information</li>
+    </ol>
+</section>
+
+<section class="content">
+    <div class="col-md-12">
+        <div class="box box-solid">
+            <div class="box-header with-border">
+                <h3 class="box-title">Information</h3>
+            </div><!-- /.box-header -->
+            <div class="box-body">          
+                <div class="col-sm-10 col-xs-12">
+                    <div class="col-sm-8 col-xs-8 col-sm-offset-4 col-xs-offset-4">
+                        <strong class="text-center">HỢP ĐỒNG</strong>
+                    </div>
+                    <div class="col-sm-9 col-xs-9 col-sm-offset-3 col-xs-offset-3">
+                        <strong class="text-center">{{contractinfo.ContractName}}</strong>
+                    </div>
+                    <div class="col-sm-7 col-xs-7 col-sm-offset-4 col-xs-offset-4">
+                        <strong class="text-center">{{contractinfo.ContractNumber}}</strong>
+                    </div>
+                    <div class="clearfix"></div>
+                    <br />
+                    <br />
+                    <div class="form-group col-sm-11 col-xs-12 col-sm-offset-1">
+                        <div class="form-group col-sm-12 col-xs-12">
+                            <span class="text-center">{{contractinfo.Description1}}</span>
+                        </div>                     
+                    </div>
+                    <div class="form-group col-sm-5 col-xs-12 col-sm-offset-1">
+                        <div class="form-group col-sm-12 col-xs-12">
+                            <strong>Bên A: <strong>{{customerinfo.Company}}</strong></strong>
+                        </div>
+                        <div class="form-group col-sm-12 col-xs-12">
+                            <span>Địa chỉ: <strong>{{customerinfo.Address}}</strong></span>
+                        </div>
+                        <div class="form-group col-sm-12 col-xs-12">
+                            <span>Điện thoại: <strong>{{customerinfo.Phone}}</strong></span>
+                        </div>
+                        <div class="form-group col-sm-12 col-xs-12">
+                            <span>Fax: <strong>{{customerinfo.Fax}}</strong></span>
+                        </div>
+                        <div class="form-group col-sm-12 col-xs-12">
+                            <span>Đại diện: <strong>{{customerinfo.CustomerName}}</strong></span>
+                        </div>
+                        <div class="form-group col-sm-12 col-xs-12">
+                            <span>Chúc vụ: <strong></strong></span>
+                        </div>
+                        <div class="form-group col-sm-12 col-xs-12">
+                            <span>Mã số thuế: <strong>{{customerinfo.TaxCode}}</strong></span>
+                        </div>
+                        <div class="form-group col-sm-12 col-xs-12">
+                            <span>Tài khoản: <strong>{{customerinfo.BankAccount}}</strong></span>
+                        </div>
+                        <div class="form-group col-sm-12 col-xs-12">
+                            <span>Ngân hàng: <strong>{{customerinfo.Bank}}</strong></span>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-5 col-xs-12 col-sm-offset-1">
+                        <div class="form-group col-sm-12 col-xs-12">
+                            <strong>Bên B: <strong>{{unitinfo.UnitName}}</strong></strong>
+                        </div>
+                        <div class="form-group col-sm-12 col-xs-12">
+                            <span>Địa chỉ: <strong>{{unitinfo.Address}}</strong></span>
+                        </div>
+                        <div class="form-group col-sm-12 col-xs-12">
+                            <span>Điện thoại: <strong>{{unitinfo.Phone}}</strong></span>
+                        </div>
+                        <div class="form-group col-sm-12 col-xs-12">
+                            <span>Fax: <strong>{{unitinfo.Fax}}</strong></span>
+                        </div>
+                        <div class="form-group col-sm-12 col-xs-12">
+                            <span>Đại diện: <strong>{{unitinfo.Represented}}</strong></span>
+                        </div>
+                        <div class="form-group col-sm-12 col-xs-12">
+                            <span>Chúc vụ: <strong>{{unitinfo.Position}}</strong></span>
+                        </div>
+                        <div class="form-group col-sm-12 col-xs-12">
+                            <span>Mã số thuế: <strong>{{unitinfo.TaxCode}}</strong></span>
+                        </div>
+                        <div class="form-group col-sm-12 col-xs-12">
+                            <span>Tài khoản: <strong>{{unitinfo.AccountBank}}</strong></span>
+                        </div>
+                        <div class="form-group col-sm-12 col-xs-12">
+                            <span>Ngân hàng: <strong>{{unitinfo.Bank}}</strong></span>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-11 col-xs-12 col-sm-offset-1">
+                        <div class="form-group col-sm-12 col-xs-12">
+                            <span class="text-center">{{contractinfo.Description2}}</span>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-11 col-xs-12 col-sm-offset-1">
+                        <div class="form-group col-sm-12 col-xs-12">
+                            <div ng-bind-html="contractinfo.ContractContent"></div>
+                          
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-2 col-xs-12">
+                    <button type="button" ui-sref="contractlist" class="btn btn-default pull-right"><i class="fa fa-undo"></i> Back</button>
+                </div>
+            </div><!-- /.box-body -->
+        </div><!-- /.box -->
+    </div>
+    <div class="clearfix"></div>
+</section>
+

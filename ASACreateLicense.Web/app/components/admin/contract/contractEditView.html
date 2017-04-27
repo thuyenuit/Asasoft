@@ -1,0 +1,228 @@
+﻿
+<section class="content-header">
+    <h1>
+        Update contract
+    </h1>
+    <ol class="breadcrumb">
+        <li><a ui-sref="dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li><a ui-sref="contractlist"> Contracts</a></li>
+        <li class="active">Update contract</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Contract information</h3>
+                </div>
+                <form class="form-horizontal" novalidate name="frmUpdateContract" role="form" ng-submit="UpdateContract()">
+                    <div class="box-body">
+                        <div class="form-group col-sm-12">
+                            <label for="inputEmail3" class="col-sm-2 control-label">Contract name *</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" required ng-model="contractinfo.ContractName" placeholder="Contract name">
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label for="inputPassword3" class="col-sm-2 control-label">Contract number *</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" required ng-model="contractinfo.ContractNumber" placeholder="Contract number">
+                            </div>
+                        </div>
+
+                        <div class="form-group col-sm-12">
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" required placeholder="Hôm nay, ngày 17 tháng 04 năm 2017 chúng tôi gồm:" ng-model="contractinfo.Description1">
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">A-Side </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" readonly class="form-control" ng-model="customerinfo.Company">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Address </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" readonly required class="form-control" ng-model="customerinfo.Address">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="inputEmail3" class="col-sm-4 control-label">Phone</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" readonly required class="form-control" name="phoneA" ng-model="customerinfo.Phone">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="inputEmail3" class="col-sm-2 control-label">Fax</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" readonly class="form-control" name="fax" ng-model="customerinfo.Fax">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputPassword3" class="col-sm-2 control-label">Represent</label>
+                                    <div class="col-sm-10">
+                                        <select required class="form-control" ng-model="contractinfo.CustomerID"
+                                                ng-options="customer.CustomerID as customer.CustomerName for customer in customerList"
+                                                ng-change="myChangeCustomer()"></select>
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Position </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputPassword3" placeholder="Position">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputPassword3" class="col-sm-2 control-label">Taxcode</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" required readonly class="form-control" ng-model="customerinfo.TaxCode">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Account bank</label>
+                                    <div class="col-sm-10">
+                                        <input type="text"  readonly class="form-control" ng-model="customerinfo.AccountBank">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Bank </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" readonly class="form-control" ng-model="customerinfo.Bank">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">B-Side </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" readonly required class="form-control" ng-model="unitinfo.UnitName">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Address </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" readonly required class="form-control" ng-model="unitinfo.UnitAddress">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="inputEmail3" class="col-sm-4 control-label">Phone</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" readonly required class="form-control" ng-model="unitinfo.UnitPhone">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="inputEmail3" class="col-sm-2 control-label">Fax</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" readonly class="form-control" ng-model="unitinfo.UnitFax">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputPassword3" class="col-sm-2 control-label">Represent</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" readonly required class="form-control" ng-model="unitinfo.UnitRepresented">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Position </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" readonly required class="form-control" ng-model="unitinfo.UnitPosition">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputPassword3" class="col-sm-2 control-label">Taxcode</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" readonly required class="form-control" ng-model="unitinfo.UnitTaxCode">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Account bank</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" readonly required class="form-control" ng-model="unitinfo.UnitAccountBank">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Bank </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" readonly required class="form-control" ng-model="unitinfo.UnitBank">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" required placeholder="Hai bên đồng ý ký Hợp đồng với các điều khoản sau:" ng-model="contractinfo.Description2">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-1">
+                                <label class="col-sm-12 control-label">Article </label>
+                            </div>
+                            <div class="col-sm-4 col-xs-8">
+                                <select required class="form-control" ng-model="contractinfo.ContractTypeID"
+                                        ng-options="con.ContractTypeID as con.ContractTypeName for con in contracttypeinfo"></select>                            
+                            </div>
+                            <div class="col-sm-4 col-xs-4">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="status" ng-model="contractinfo.IsLock" ng-checked="contractinfo.IsLock"> Unlocked
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>        
+                        
+                        <div class="form-group col-sm-12">
+                            <textarea class="form-control" name="content" required ckeditor="ckeditorOptions" ng-model="contractinfo.ContractContent"></textarea>
+                        </div>
+
+                        <div class="form-group col-lg-12">
+                            <div class="col-lg-4">
+                            </div>
+                            <div class="col-lg-3">
+                                <button type="submit" ng-disabled="frmUpdateContract.$invalid" class="btn btn-success pull-left"><i class="fa fa-save"></i> Update</button>
+                                <button type="button" ui-sref="contractlist" class="btn btn-default pull-right"><i class="fa fa-undo"></i> Cancel</button>
+                            </div>
+                            <div class="col-lg-5">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+

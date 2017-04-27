@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Trang quản trị</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link href="/Assets/admin/libs/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link href="/Assets/admin/libs/toastr/toastr.css" rel="stylesheet" />
+
+    <link href="/Assets/admin/css/AdminLTE.min.css" rel="stylesheet">
+    <link href="/Assets/admin/css/custom.css" rel="stylesheet" />
+
+    <link href="/Assets/admin/css/datepicker/bootstrap-datepicker3.css" rel="stylesheet" />
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link href="/Assets/admin/css/skins/_all-skins.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <base href="/" />
+
+    <link href="Assets/admin/css/languages.min.css" rel="stylesheet" />
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini" ng-app="asasoft" ng-controller="rootController">
+
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="../../index2.html"><b>Asasoft</b>ASA</a>
+        </div><!-- /.login-logo -->
+        <div class="login-box-body">
+            <p class="login-box-msg">Sign in to start your session</p>
+            <form role="form" method="post" ng-submit="loginSubmit()">
+                <div class="form-group has-feedback">
+                    <input type="email" class="form-control" placeholder="Username">
+                    <span class="fa fa-user form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="password" class="form-control" placeholder="Password">
+                    <span class="fa fa-lock form-control-feedback"></span>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="checkbox icheck">
+                            <label>
+                                <input type="checkbox"> Nhớ mật khẩu
+                            </label>
+                        </div>
+                    </div><!-- /.col -->
+                    <div class="col-xs-4">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">Đăng nhập</button>
+                    </div><!-- /.col -->
+                </div>
+            </form>
+            <a ui-sref="homeadmin">Đăng nhập</a><br>
+        </div><!-- /.login-box-body -->
+    </div>
+
+    <!-- jQuery 2.1.4 -->
+    <script src="/Assets/admin/libs/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.5 -->
+    <script src="/Assets/admin/libs/bootstrap/bootstrap.js"></script>
+    <!-- SlimScroll -->
+    <script src="/Assets/admin/libs/slimScroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <script src="/Assets/admin/libs/fastclick/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="/Assets/admin/js/app.min.js"></script>
+
+    <!-- Include Date Picker -->
+    <script src="/Assets/admin/js/datepicker/bootstrap-datepicker.min.js"></script>
+
+    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />-->
+    <!-- AdminLTE for demo purposes -->
+    <!--<script src="/Assets/admin/js/demo.js"></script>-->
+    <!--Begin angularJS-->
+
+    <script src="https://cdn.ckeditor.com/4.4.3/standard/ckeditor.js"></script>
+
+    <script src="/Assets/admin/libs/angular/angular.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js"></script>
+    <script src="/Assets/admin/libs/angular-ui-router/angular-ui-router.js"></script>
+    <script src="/Assets/admin/libs/angularjs-dropdown-multiselect/angularjs-dropdown-multiselect.js"></script>
+    <script src="/Assets/admin/libs/toastr/toastr.js"></script>
+    <script src="/Assets/admin/libs/bootbox/bootbox.js"></script>
+    <script src="/Assets/admin/libs/ckeditor/ckeditor.js"></script>
+    <script src="/Assets/admin/libs/ckfinder/ckfinder.js"></script>
+    <script src="/Assets/admin/libs/ngBootbox/ngBootbox.js"></script>
+    <script src="/Assets/admin/libs/ng-ckeditor/ng-ckeditor.js"></script>
+    <script src="/Assets/admin/libs/ngSanitize/angular-sanitize.js"></script>
+
+    <script src="/app/shared/modules/asasoft.common.js"></script>
+    <script src="/app/shared/filter/statusFilter.js"></script>
+    <script src="/app/shared/filter/statusFilterRead.js"></script>
+    <script src="/app/shared/services/apiService.js"></script>
+    <script src="/app/shared/directives/pagerDirective.js"></script>
+    <script src="/app/shared/services/notificationService.js"></script>
+    <script src="/app/shared/services/commonService.js"></script>
+
+    <script src="/app/components/admin/customer/customerInfo.module.js"></script>
+    <script src="/app/components/admin/licenseinfo/licenseInfo.module.js"></script>
+    <script src="/app/components/admin/user/user.module.js"></script>
+    <script src="/app/components/admin/request_license/requestLicense.module.js"></script>
+    <script src="/app/components/admin/contract/contract.module.js"></script>
+    <script src="/app/components/admin/article/article.module.js"></script>
+    <script src="/app/components/admin/contact/contact.module.js"></script>
+
+    <script src="/app/app.js"></script>
+
+    <script src="/app/components/admin/dashboard/rootController.js"></script>
+    <script src="/layout/admin/loginController.js"></script>
+
+    <script src="/app/components/admin/dashboard/dashboardController.js"></script>
+
+    <script src="/app/components/admin/server_config/serverConfigConnectController.js"></script>
+</body>
+</html>
+
+
+
+

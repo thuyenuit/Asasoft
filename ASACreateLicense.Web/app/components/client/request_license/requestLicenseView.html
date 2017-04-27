@@ -1,0 +1,198 @@
+﻿
+<section id="contact">
+    <div class="container">
+        <div class="col-sm-8 col-sm-offset-2">
+            <div class="contact-heading text-center">
+                <h2 class="title-one">Request Information</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-title">
+                </div>
+            </div>
+
+            <div style="padding-top:0px;" class="panel-body">
+                <div id="contact-form-section" ng-init="requestLicenses={}">
+                    <form class="form-horizontal" novalidate name="frmAddRequestLicense" role="form" ng-submit="CusRequestLicense()">
+                        <div class="row form-group">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">Customer *</label>
+                                    <div class="col-sm-9 col-xs-12">
+                                        <input type="text" required name="customerName" class="form-control" ng-model="requestLicenses.CustomerName" placeholder="Nguyễn Phan Anh">
+                                        <span class="error customerName" ng-show="(frmAddRequestLicense.customerName.$dirty || submitted)
+                                              && frmAddRequestLicense.customerName.$invalid">Vui lòng nhập tên khách hàng</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">Customer type *</label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control" name="customerTypeId" ng-model="requestLicenses.CustomerTypeID"
+                                                ng-options="option.CustomerTypeID as option.CustomerTypeName for option in customerTypes" required>
+                                            <option value="">---Select customer type---</option>
+                                        </select>
+
+                                        <span class="error customerTypeID" ng-show="(frmAddRequestLicense.customerTypeId.$dirty || submitted)
+                                              && frmAddRequestLicense.customerTypeId.$error.required">Vui lòng chọn loại khách hàng</span>
+                                        <input name="customerTypeId2" type="hidden" ng-model="requestLicenses.CustomerTypeID" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row form-group" ng-show="requestLicenses.CustomerTypeID=='1'">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">Company code *</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="companyCode" required class="form-control" ng-model="requestLicenses.CompanyCode" placeholder="1000502">
+                                        <span class="error companyCode" ng-show="(frmAddRequestLicense.companyCode.$dirty || submitted)
+                                                   && frmAddRequestLicense.companyCode.$invalid">Vui lòng nhập mã công ty</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">Company *</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="company" required class="form-control" ng-model="requestLicenses.Company" placeholder="Công ty TNHH Hệ Thống Thông Tin Nam Việt">
+                                        <span class="error company" ng-show="(frmAddRequestLicense.company.$dirty || submitted) &&
+                                                  frmAddRequestLicense.company.$invalid">Vui lòng nhập tên công ty</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">Server name *</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="serverName" required class="form-control" ng-model="requestLicenses.ServerName" placeholder="host.vn">
+                                        <span class="error serverName" ng-show="(frmAddRequestLicense.serverName.$dirty || submitted)
+                                              && frmAddRequestLicense.serverName.$invalid">Vui lòng nhập tên máy chủ</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">Email *</label>
+                                    <div class="col-sm-9">
+                                        <input type="email" name="email" required class="form-control" ng-model="requestLicenses.Email" placeholder="info@asasoft.vn">
+                                        <span class="error email" ng-show="(frmAddRequestLicense.email.$dirty || submitted) &&
+                                                  frmAddRequestLicense.email.$error.required">
+                                            Vui lòng nhập địa chỉ email!
+                                        </span>
+                                        <span class="error email" ng-show="frmAddRequestLicense.email.$error.email">
+                                            Địa chỉ email không hợp lệ!
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">Keys *</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="keys" required class="form-control" ng-model="requestLicenses.Keys" placeholder="4510001006870001252241110">
+                                        <span class="error keys" ng-show="(frmAddRequestLicense.keys.$dirty || submitted) &&
+                                                  frmAddRequestLicense.keys.$invalid">Vui lòng nhập keys</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">Address *</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="address" required class="form-control" ng-model="requestLicenses.Address" placeholder="72/10A Tây Thạnh, P.Tây Thạnh, Q.Tân Phú">
+                                        <span class="error address" ng-show="(frmAddRequestLicense.address.$dirty || submitted) &&
+                                                  frmAddRequestLicense.address.$invalid">Vui lòng nhập địa chỉ</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">Phone *</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="phone" required class="form-control" ng-model="requestLicenses.Phone" placeholder="084838158045 ">
+                                        <span class="error phone" ng-show="(frmAddRequestLicense.phone.$dirty || submitted) &&
+                                                  frmAddRequestLicense.phone.$invalid">Vui lòng nhập số điện thoại</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">City *</label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control" name="cityId" ng-model="requestLicenses.CityID"
+                                                ng-options="option.CityID as option.CityName for option in cities" required>
+                                            <option value="">---Select city---</option>
+                                        </select>
+                                        <span class="error cityID" ng-show="(frmAddRequestLicense.cityId.$dirty || submitted) &&
+                                                   frmAddRequestLicense.cityId.$error.required">Vui lòng chọn tỉnh/thành phố</span>
+                                        <input name="cityId2" type="hidden" ng-model="requestLicenses.CityID" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">Fax</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="fax" class="form-control" ng-model="requestLicenses.Fax" placeholder="084838158046">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">Contract type *</label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control" name="contractTypeID" ng-model="requestLicenses.ContractTypeID"
+                                                ng-options="option.ContractTypeID as option.ContractTypeName for option in contractTypes" required>
+                                            <option value="">---Select contract type---</option>
+                                        </select>
+                                        <span class="error contractTypeID" ng-show="(frmAddRequestLicense.contractTypeID.$dirty || submitted)
+                                                 && frmAddRequestLicense.contractTypeID.$error.required">Vui lòng chọn loại hợp đồng</span>
+                                        <input name="contractTypeID2" type="hidden" ng-model="requestLicenses.ContractTypeID" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-5">                              
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="col-sm-6 col-xs-6">
+                                    <span class="input-group-btn">
+                                        <input type="submit" class="btn btn-success" value="Sent">
+                                    </span>
+                                </div>
+                                <div class="col-sm-6 col-xs-6">
+                                    <span class="input-group-btn">
+                                        <input type="button" class="btn btn-default" value="Refesh">
+                                    </span>
+                                </div>                             
+                            </div>
+                            <div class="col-sm-4">
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,135 @@
+﻿<div class="wrapper">
+    <header class="main-header">
+        <a ui-sref="dashboard" class="logo">
+            <span class="logo-mini"><b>A</b>SA</span>
+            <span class="logo-lg"><b>Asasoft</b></span>
+        </a>
+
+        <nav class="navbar navbar-static-top" role="navigation">
+            <a href="javascript::;" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown user user-menu">
+                        <a href="javascript::;" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="/Assets/admin/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                            <span class="hidden-xs">Nguyễn Văn Anh</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="user-header">
+                                <img src="/Assets/admin/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                <p>
+                                    Nguyễn Văn Anh
+                                </p>
+                            </li>
+                            <li class="user-footer">
+                                <div class="pull-left">
+                                    <a ui-sref="changepassword" class="btn btn-default btn-flat">Change password</a>
+                                </div>
+                                <div class="pull-right">
+                                    <a ng-click="logOut()" class="btn btn-default btn-flat">Sign out</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <aside class="main-sidebar">
+        <section class="sidebar">
+            <div class="user-panel">
+                <div class="pull-left image">
+                    <img src="/Assets/admin/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                </div>
+                <div class="pull-left info">
+                    <p>Alexander Pierce</p>
+                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                </div>
+            </div>
+            <form action="#" method="get" class="sidebar-form">
+                <div class="input-group">
+                    <input type="text" name="q" class="form-control" placeholder="Search...">
+                    <span class="input-group-btn">
+                        <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
+            </form>
+            <ul class="sidebar-menu">
+
+                <li class="treeview">
+                    <a href="javascript:void(0);">
+                        <i class="fa fa-files-o"></i>
+                        <span>Hệ thống</span>
+                        <span class="label label-primary pull-right">3</span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a ui-sref="application_groups"><i class="fa fa-circle-o"></i> Nhóm người dùng</a></li>
+                        <li><a ui-sref="application_roles"><i class="fa fa-circle-o"></i> Quyền</a></li>
+                        <li><a ui-sref="application_users"><i class="fa fa-circle-o"></i> Người dùng</a></li>
+                    </ul>
+                </li>
+
+                <li><a ui-sref="dashboard"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+                <li><a ui-sref="contractlist"><i class="fa fa-file-text"></i> <span>Contract</span></a></li>
+                <li><a ui-sref="licenseinfolist"><i class="fa fa-key"></i> <span>License info</span></a></li>
+                <li><a ui-sref="requestlicense"><i class="fa fa-bullhorn"></i> <span>Request license</span></a></li>
+                <li><a ui-sref="customer"><i class="fa fa-bullhorn"></i> <span>Customer</span></a></li>
+                <li><a ui-sref="contact"><i class="fa fa-bullhorn"></i> <span>Contact</span></a></li>
+               
+                 <li class="treeview">
+                    <a href="javascripts::;">
+                        <i class="fa fa-cog"></i> <span>Setting</span> <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a ui-sref="users"><i class="fa fa-circle-o text-aqua"></i>User info</a></li>
+                        <li><a ui-sref="articles"><i class="fa fa-circle-o text-aqua"></i> Article</a></li>
+                        <li><a ui-sref="serverconfig"><i class="fa fa-circle-o text-aqua"></i> Server config</a></li>
+                    </ul>
+                </li>
+
+               
+            </ul>
+        </section>
+    </aside>
+
+    <div class="content-wrapper">
+        <div ui-view></div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+            <b>Version</b> 1.0.0
+        </div>
+        <strong> &copy; Phát triển bởi Công ty TNHH Hệ Thống Thông Tin Nam Việt - <a href="#">Asasoft</a></strong>
+    </footer>
+
+    <aside class="control-sidebar control-sidebar-dark">
+        <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+            <li><a href="#control-sidebar-home-tab" data-toggle="tab"></a></li>
+            <li><a href="#control-sidebar-settings-tab" data-toggle="tab"></a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="form-group">
+                <p></p>
+                <div class="form-group col-sm-12 col-xs-12">
+                    <div class="col-sm-9 col-xs-8">Language</div>
+                    <div class="col-sm-3 col-xs-4"><img style="cursor:pointer" id="languageimg" lang={{lang}} class="lang-lg lang-xs" ng-click="setLanguage()" /></div>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <div class="control-sidebar-bg"></div>
+</div>
+
+<script src="/Assets/admin/js/app.min.js"></script>

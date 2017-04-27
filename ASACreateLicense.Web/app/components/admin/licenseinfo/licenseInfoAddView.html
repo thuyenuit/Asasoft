@@ -1,0 +1,328 @@
+﻿<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Tạo mới License
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+        <li><a ui-sref="licenseinfolist">License info list</a></li>
+        <li class="active">Tạo mới License</li>
+    </ol>
+</section>
+
+<script>
+    $(document).ready(function () {
+        var date_input = $('input[name="date"]'); //our date input has the name "date"
+        var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+        date_input.datepicker({
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        })
+    })
+</script>
+
+<section class="content">
+    <!-- Default box -->
+    <div class="box">
+        <div class="box-header with-border">
+            <h3 class="box-title">Database License</h3>
+            <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
+                <button class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
+            </div>
+        </div>
+        <div class="box-body">          
+            <div class="row container-fluid">
+                <div>
+                    <table class="table table-bordered table-hover" style="overflow: scroll;display:block;">
+                        <thead>
+                            <tr>
+                                <th>License</th>
+                            </tr>
+                        </thead>
+                        <tbody>                         
+                            <tr>
+                                <td>121111111111111111111111111111111111</td>
+                            </tr>                          
+                        </tbody>
+                    </table>
+                    <br />
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-md-1 control-label">Code *</label>
+                            <div class="col-md-2">
+                                <input type="text" class="form-control input-md" id="code" placeholder="Code">
+                            </div>
+                            <label class="col-md-1 control-label">System *</label>
+                            <div class="col-md-2">
+                                <input type="text" class="form-control input-md" id="system" placeholder="System">
+                            </div>
+                            <label class="col-md-1 control-label">Version *</label>
+                            <div class="col-md-2">
+                                <input type="text" class="form-control input-md" id="version" placeholder="Version">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-1 control-label">Server *</label>
+                            <div class="col-md-2">
+                                <input type="text" class="form-control" id="server" placeholder="Server">
+                            </div>
+                            <label class="col-md-1 control-label">Database *</label>
+                            <div class="col-md-2">
+                                <input type="text" class="form-control" id="database" placeholder="Database">
+                            </div>
+                            <label class="col-md-1 control-label">Hardware 1</label>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" id="hardware1" placeholder="Hardware 1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <label class="col-md-1 control-label">Date *</label>
+                            <div class="col-md-2">
+                                <input type="text"  name="date" readonly class="form-control" placeholder="Date">
+                            </div>
+
+                            <label class="col-md-1 control-label">Trial Day *</label>
+                            <div class="col-md-2">
+                                <input type="number" class="form-control" id="trialday" placeholder="Trial Day">
+                            </div>
+                            <label class="col-md-1 control-label">Hardware 2</label>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" id="hardware2" placeholder="Hardware 2">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-1 control-label">Key *</label>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" id="key" placeholder="Key">
+                            </div>
+                            <label class="col-md-1 control-label">Hardware 3</label>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" id="hardware3" placeholder="Hardware 3">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-1 control-label">License *</label>
+                            <div class="col-md-5">
+                                <textarea class="form-control" style="resize: none; height:160px" id="license" placeholder="License"></textarea>
+                            </div>
+                            <label class="col-md-1 control-label">Hardware 4</label>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" id="hardware4" placeholder="Hardware 4">
+                            </div>
+                            <div class="col-md-6" style="padding:0px">
+                                <label class="col-md-2 control-label">User license</label>
+                                <div class="col-md-10">
+                                    <textarea class="form-control" style="resize: none; height:110px" id="userlicense" placeholder="User license"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-1 col-md-2">
+                                <input type="button" class="btn btn-success" id="createkey" value="Create Key">
+                            </div>
+                            <div class="col-md-2">
+                                <input type="button" class="btn btn-primary" id="decrypt" value="Decrypt">
+                            </div>
+                            <div class="col-md-offset-2 col-md-2">
+                                <input type="button" class="btn btn-primary" id="decrypt2" value="Decrypt">
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="form-group">
+                            <div class="col-md-2">
+                                <input type="button" class="btn btn-default" ui-sref="licenseinfolist" value="Cancel">
+                            </div>
+                            <div class="col-md-2">
+                                <input type="button" class="btn btn-primary" id="select" value="Select">
+                            </div>
+                            <div class="col-md-2">
+                                <input type="button" class="btn btn-primary" id="update" value="Update">
+                            </div>
+                            <div class="col-md-2">
+                                <input type="button" class="btn btn-info" id="infors" value="Infors">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="box-footer">
+        </div>
+    </div>
+    <!-- //Default box -->
+
+    <!-- Default box -->
+    <div class="box">
+        <div class="box-header with-border">
+            <h3 class="box-title">Computer License</h3>
+            <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
+                <button class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
+            </div>
+        </div>
+        <div class="box-body">
+            <div>
+                <table class="table table-bordered table-hover" style="overflow: scroll;display:block; max-height:300px">
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>ComputerName</th>
+                            <th>RegDate</th>
+                            <th>Description</th>
+                            <th>LastRun</th>
+                            <th>Flag</th>
+                            <th>ComputerType</th>
+                            <th>HardwareID1</th>
+                            <th>HardwareID2</th>
+                            <th>HardwareID3</th>
+                            <th>HardwareID4</th>
+                            <th>HardwareID5</th>
+                            <th>HardwareID6</th>
+                            <th>HardwareID7</th>
+                            <th>HardwareID8</th>
+                            <th>License</th>
+                            <th>Version</th>
+                            <th>LastUpdate</th>
+                        </tr>
+                    </thead>
+                    <tbody>                      
+                            <tr id="@items.Code" data-toggle="modal" >
+                                <td>.Code</td>
+                                <td>.ComputerName</td>
+                                <td>.RegDate</td>
+                                <td>.Description</td>
+                                <td>.LastRun</td>
+                                <td>.Flag</td>
+                                <td>.ComputerType</td>
+                                <td>.HardwareID1</td>
+                                <td>.HardwareID2</td>
+                                <td>.HardwareID3</td>
+                                <td>.HardwareID4</td>
+                                <td>.HardwareID5</td>
+                                <td>.HardwareID6</td>
+                                <td>.HardwareID7</td>
+                                <td>.HardwareID8</td>
+                                <td>.License</td>
+                                <td>.Version</td>
+                                <td>.LastUpdate</td>
+                            </tr>                                              
+                    </tbody>
+                </table>
+                <br />
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-1 control-label">Code</label>
+                        <div class="col-md-2">
+                            <input type="text" class="form-control input-md" id="code2" placeholder="Code">
+                        </div>
+                        <label class="col-md-1 control-label">Computer</label>
+                        <div class="col-md-2">
+                            <input type="text" class="form-control input-md" id="computer" placeholder="Computer">
+                        </div>
+                        <label class="col-md-1 control-label">Database</label>
+                        <div class="col-md-2">
+                            <input type="text" class="form-control input-md" id="database2" placeholder="Database">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1 control-label">Reg Date</label>
+                        <div class="col-md-2">
+                            <input type="text" name="date" readonly class="form-control" placeholder="Reg Date">
+                        </div>
+                        <label class="col-md-1 control-label">Type</label>
+                        <div class="col-md-2">
+                            <input type="number" class="form-control" id="type" placeholder="Type">
+                        </div>
+                        <label class="col-md-1 control-label">Description</label>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" id="description" placeholder="Description">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1 control-label">Hardware 1</label>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" id="hardware12" placeholder="Hardware 1">
+                        </div>
+                        <div class="col-md-offset-1 col-md-5">
+                            <input type="text" class="form-control" id="hardware13" placeholder="Hardware 1">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1 control-label">Hardware 2</label>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" id="hardware22" placeholder="Hardware 2">
+                        </div>
+                        <div class="col-md-1">
+                            <input type="button" class="btn btn-default" id="next" value=">>" onclick="EncryptHardware()">
+                        </div>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" id="hardware23" placeholder="Hardware 2">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1 control-label">Hardware 3</label>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" id="hardware32" placeholder="Hardware 3">
+                        </div>
+                        <div class="col-md-1">
+                            <input type="button" class="btn btn-default" id="pre" value="<<" onclick="DecryptHardware()">
+                        </div>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" id="hardware33" placeholder="Hardware 3">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1 control-label">Hardware 4</label>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" id="hardware42" placeholder="Hardware 4">
+                        </div>
+                        <div class="col-md-offset-1 col-md-5">
+                            <input type="text" class="form-control" id="hardware43" placeholder="Hardware 4">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-1 control-label">Key *</label>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" id="key2" placeholder="Key">
+                            <div style="padding-top:10px">
+                                <div class="col-md-4">
+                                    <input type="button" class="btn btn-success" id="createkey2" value="Create Key" onclick="CreateKey()">
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="button" class="btn btn-primary" id="decrypt2" value="Decrypt" onclick="Decrypt()">
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="button" class="btn btn-primary" id="update2" value="Update" onclick="UpdateLicense()">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-offset-1 col-md-5">
+                            <textarea class="form-control" style="resize: none; height:100px" id="flag" placeholder="Flag"></textarea>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="form-group">
+                        <div class="col-md-2">
+                            <input type="button" class="btn btn-primary" id="select" value="Select">
+                        </div>
+                        <div class="col-md-2">
+                            <input type="button" class="btn btn-primary" id="update3" value="Update">
+                        </div>
+                        <div class="col-md-2">
+                            <input type="button" class="btn btn-info" id="infors2" value="Infors">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="box-footer">
+        </div>
+    </div>
+    <!-- //Default box -->
+</section>

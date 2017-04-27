@@ -1,0 +1,79 @@
+﻿<section class="content-header">
+    <h1>
+        Create Article
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li><a ui-sref="articles"> Articles</a></li>
+        <li class="active">Create Article</li>
+    </ol>
+</section>
+
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-info">
+                <div class="box-header">
+                    <h3 class="box-title">Article Infomation</h3>
+                    <div class="box-tools pull-right">
+                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                        <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="box-body pad" style="display: block;">
+
+                    <div id="contact-form-section" ng-init="articleinfo={}">
+                        <form class="form-horizontal" novalidate name="frmCreateArtilce" role="form" ng-submit="CreateArticle()">
+                            <div class="col-sm-12">
+                                <div class="col-sm-8">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Contract type *</label>
+
+                                        <div class="col-sm-9">
+                                            <select required class="form-control" ng-model="contractTypeList" ng-change="changedValue(contractTypeList)"
+                                                    ng-options="contract as contract.ContractTypeName for contract in contracttypeinfo">
+                                                <option value="">---Select contract ---</option>
+                                            </select>
+                                           
+                                        </div>
+
+                                        <!--<div class="col-sm-9">
+                                            <input type="text" required name="articleName" class="form-control" ng-model="articleinfo.ArticleName" placeholder="ĐIỀU 1: NỘI DUNG HỢP ĐỒNG">
+                                        </div>-->
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="status" ng-model="articleinfo.IsLock" ng-checked="articleinfo.IsLock"> Unlocked
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12">
+                                <textarea class="form-control" required name="content" ckeditor="ckeditorOptions" ng-model="articleinfo.Content"></textarea>
+                            </div>
+                            <br />
+
+                            <div class="form-group col-sm-12">
+                                <div class="col-sm-4">
+                                </div>
+                                <div class="col-sm-3">
+                                    <button type="submit" ng-disabled="frmCreateArtilce.$invalid" class="btn btn-success pull-left"><i class="fa fa-save"></i> Create</button>
+                                    <button type="button" ui-sref="articles" class="btn btn-default pull-right"><i class="fa fa-undo"></i> Cancel</button>
+                                </div>
+                                <div class="col-sm-4">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

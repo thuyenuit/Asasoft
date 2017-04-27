@@ -1,0 +1,86 @@
+﻿<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Thiết lập Server Config
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li class="active">Setting Server Config</li>
+    </ol>
+</section>
+
+<section class="content">
+    <div class="row">     
+        <!-- column -->
+        <div class="col-md-12">
+            <!-- Horizontal Form -->
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Thông tin</h3>
+                </div><!-- /.box-header -->
+                <!-- form start -->
+                <div id="contact-form-section" ng-init="serverConfig={}">        
+                        <form class="form-horizontal" novalidate name="frmServerConfig" role="form" ng-submit="ServerConfigConnect()">
+                            <div class="box-body">
+                                <div class="col-lg-offset-2">
+                                    <div class="form-group col-lg-8">
+                                        <label for="inputEmail3" class="col-sm-3 control-label">Server name</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" required name="serverName" ng-model="serverConfig.ServerName" placeholder="Server name">
+                                            <span class="error serverName" ng-show="(frmServerConfig.serverName.$dirty || submitted)
+                                              && frmServerConfig.serverName.$invalid">Vui lòng nhập tên Server name!</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-8">
+                                        <label for="inputPassword3" class="col-sm-3 control-label">User name</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" required name="userName" class="form-control" ng-model="serverConfig.UserName" placeholder="User name">
+                                            <span class="error userName" ng-show="(frmServerConfig.userName.$dirty || submitted)
+                                              && frmServerConfig.userName.$invalid">Vui lòng nhập User name!</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-8">
+                                        <label for="inputPassword3" class="col-sm-3 control-label">Password</label>
+                                        <div class="col-sm-9">
+                                            <input type="password" required name="password" class="form-control" ng-model="serverConfig.Password" placeholder="Password">
+                                            <span class="error password" ng-show="(frmServerConfig.password.$dirty || submitted)
+                                              && frmServerConfig.password.$invalid">Vui lòng nhập Password!</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-8">
+                                        <label for="inputPassword3" class="col-sm-3 control-label">Database</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" required name="database" class="form-control" ng-model="serverConfig.Database" placeholder="Database">
+                                            <span class="error database" ng-show="(frmServerConfig.database.$dirty || submitted)
+                                              && frmServerConfig.database.$invalid">Vui lòng nhập Database!</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-8">
+                                        <label for="inputPassword3" class="col-sm-3 control-label">Option</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" required name="option" class="form-control" ng-model="serverConfig.Option" placeholder="Option">                                      
+                                            <span class="error option" ng-show="(frmServerConfig.option.$dirty || submitted)
+                                              && frmServerConfig.option.$invalid">Vui lòng nhập Option!</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-lg-12">
+                                        <div class="col-lg-2">
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <button type="submit" class="btn btn-success pull-left"><i class="fa fa-cog"></i> Connect</button>
+                                            <button type="button" ui-sref="dashboard" class="btn btn-default pull-right"><i class="fa fa-undo"></i> Cancel</button>
+                                        </div>
+                                        <div class="col-lg-6">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                </div><!-- /.box-body -->
+                           
+                        </form>
+                    </div>
+                </div><!-- /.box -->
+            </div>
+    </div>
+</section>

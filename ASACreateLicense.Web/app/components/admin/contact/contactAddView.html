@@ -1,0 +1,83 @@
+﻿<section id="contact">
+    <div class="container">
+        <div class="row text-center clearfix">
+            <div class="col-sm-8 col-sm-offset-2">
+                <div class="contact-heading">
+                    <h2 class="title-one">Contact With Us</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="contact-details">
+            <div class="pattern"></div>
+            <div class="row text-center clearfix">
+                <div class="col-md-5">
+                    <div class="contact-address">
+                        <address>
+                            <p><span>Asasoft Co., Ltd</span></p>
+
+                            <strong>Address: 72/10A Tay Thanh Str., Tay Thanh W., Tan Phu D., HCMC</strong>
+                            <br>
+                            <strong>Phone: (+84-8) 3815 8045</strong><br>
+                            <strong>Fax: (+84-8) 3815 8046</strong><br>
+                            <strong>Email: info@asasoft.vn</strong><br>
+                        </address>
+                        <div class="social-icons">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div id="contact-form-section">
+                        <div class="status alert alert-success" style="display: none"></div>
+                        <form class="form-horizontal" name="contactForm" role="form" novalidate ng-submit="AddContact()" >
+                            <div class="form-group">
+                                <div>
+                                    <input type="text" class="form-control" name="customerName" placeholder="Customer Name" ng-model="Customer.CustomerName"
+                                           ng-required=true />
+                                </div>
+                                <span class="error" ng-show="contactForm.customerName.$touched && contactForm.customerName.$error.required">Your Name is not null !</span>
+                                <span class="valid" ng-show="contactForm.customerName.$valid"></span>
+                            </div>
+                            <div class="form-group">
+                                <div>
+                                    <input type="text" class="form-control" name="company" placeholder="Your Company" ng-model="Customer.Company">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div>
+                                    <input type="text" class="form-control input-md" name="phone" placeholder="Your Phone" ng-model="Customer.Phone" ng-required="true" ng-minlength="10" ng-maxlength="11" ng-pattern="/^\d+$/" />
+                                </div>
+                                <span class="error" ng-show="contactForm.phone.$touched && contactForm.phone.$error.required">Phone is not null !</span>
+                                <span class="error" ng-show="contactForm.phone.$error.pattern || contactForm.phone.$touched && contactForm.phone.$error.minlength || contactForm.phone.$error.maxlength ">Incorrect phone format!</span>
+                            </div>
+                            <div class="form-group">
+                                <div>
+                                    <input type="email" class="form-control input-md" name="email" placeholder="Email" ng-model="Customer.Email" ng-pattern="/^([a-z0-9_\.\+-]+)@([\da-z\.-]+)\.([a-z\.]+)$/" ng-required="true" />
+                                </div>
+                                <span class="error" ng-show="contactForm.email.$touched && contactForm.email.$error.required">Email is not null !</span>
+                                <span class="error" ng-show="contactForm.email.$touched && contactForm.email.$error.pattern">Incorrect email format! !</span>
+                            </div>
+
+                            <div class="form-group">
+                                <div>
+                                    <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Message" ng-model="Customer.Msg" ng-required="true"></textarea>
+                                </div>
+                                <span class="error" ng-show="contactForm.message.$touched && contactForm.message.$error.required">Message Name is not null !</span>
+                                <span class="valid" ng-show="contactForm.message.$valid"></span>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary" ng-disabled="contactForm.$invalid">Send</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> <!--/#contact-->

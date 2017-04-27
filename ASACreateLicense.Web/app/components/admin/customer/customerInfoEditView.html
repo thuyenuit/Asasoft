@@ -1,0 +1,137 @@
+﻿<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Update Customer
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+        <li><a href="#">Khách hàng</a></li>
+        <li class="active">Cập nhật khách hàng</li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content">
+    <div class="box box-info">
+        <form class="form-horizontal" name="updateForm" role="form" novalidate ng-submit="UpdateCustomer()">
+            <div class="box-body">
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <label class="col-lg-4">Customer name*</label>
+                        <div class="input-group col-md-8">
+                            <input type="text" ng-model="formData.CustomerName" class="form-control" name="customerName" placeholder="Customer Name" id="CustomerName" ng-required= "true"/>
+                        </div>
+                        <span class="error" ng-show="updateForm.customerName.$touched && updateForm.customerName.$error.required">Customer Name is not null !</span>
+                        <span class="valid" ng-show="updateForm.customerName.$valid"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="col-md-4">Customer Type *</label>
+                        <div class="input-group col-md-8">
+                            <select class="form-control input-md" ng-model="formData.CustomerTypeID" ng-required=true
+                                    ng-options="customerType.CustomerTypeID as customerType.CustomerTypeName for customerType in listCustomerType"></select>
+                        </div>
+                        <span class="error" ng-show="updateForm.customerType.$touched && updateForm.customerType.$error.required">Customer Type is not null !</span>
+                    </div>
+                </div>
+
+                <div class="row form-group" ng-hide="formData.CustomerTypeID == 12 ">
+                    <div class="col-md-6">
+                        <label class="col-md-4">Company *</label>
+                        <div class="input-group col-md-8">
+                            <input type="text" ng-model="formData.Company" class="form-control input-md" name="company" placeholder="Company" id="Company" ng-required="formData.CustomerTypeID==1" />
+                        </div>
+                        <span class="error" ng-show="updateForm.company.$touched && updateForm.company.$error.required">Company is not null !</span>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="col-md-4">Company Code *</label>
+                        <div class="input-group col-md-8">
+                            <input type="text" class="form-control input-md" name="companyCode" placeholder="Company Code" id="CompanyCode" ng-model="formData.CompanyCode" ng-required="formData.CustomerTypeID==1" />
+                        </div>
+                        <span class="error" ng-show="updateForm.companyCode.$touched && updateForm.companyCode.$error.required">Company Code is not null !</span>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-6">
+                        <label class="col-md-4">Phone *</label>
+                        <div class="input-group col-md-8">
+                            <input type="text" ng-model="formData.Phone" class="form-control input-md" name="phone" placeholder="Phone number" id="Phone" ng-required="true" ng-minlength="10" ng-maxlength="11" ng-pattern="/^\d+$/" />
+                        </div>
+                        <span class="error" ng-show="updateForm.phone.$touched && updateForm.phone.$error.required">Phone is not null !</span>
+                        <span class="error" ng-show="updateForm.phone.$touched && updateForm.phone.$error.minlength || updateForm.phone.$error.pattern || updateForm.phone.$error.maxlength ">Incorrect phone format!</span>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="col-md-4">Email *</label>
+                        <div class="input-group col-md-8">
+                            <input type="email" class="form-control input-md" name="email" placeholder="Email" id="Email" ng-model="formData.Email" ng-pattern="/^([a-z0-9_\.\+-]+)@([\da-z\.-]+)\.([a-z\.]+)$/" ng-required="true" />
+                        </div>
+                        <span class="error" ng-show="updateForm.email.$touched && updateForm.email.$error.required">Email is not null !</span>
+                        <span class="error" ng-show="updateForm.email.$touched && updateForm.email.$error.pattern">Incorrect email format! !</span>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-6">
+                        <label class="col-md-4">Fax</label>
+                        <div class="input-group col-md-8">
+                            <input type="text" class="form-control input-md" name="fax" placeholder="Fax" id="Fax" ng-model="formData.Fax" ng-minlength="10" ng-maxlength="11" ng-pattern="/^\d+$/" />
+                        </div>
+                        <span class="error" ng-show="updateForm.fax.$touched && updateForm.fax.$error.minlength || updateForm.fax.$error.pattern || updateForm.fax.$error.maxlength ">Incorrect Fax format!</span>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="col-md-4">Address *</label>
+                        <div class="input-group col-md-8">
+                            <input type="text" class="form-control input-md" name="address" placeholder="Address" id="Address" ng-model="formData.Address" ng-required="true" />
+                        </div>
+                        <span class="error" ng-show="updateForm.address.$touched && updateForm.address.$error.required">Address is not null !</span>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-6">
+                        <label class="col-md-4">City name *</label>
+                        <div class="input-group col-md-8">
+                            <select class="form-control input-md" name="cityName" ng-model="formData.CityID" ng-required="true"
+                                    ng-options="City.CityID as City.CityName for City in listCityName"></select>
+                        </div>
+                        <span class="error" ng-show="updateForm.cityName.$touched && updateForm.cityName.$error.required">City name is not null !</span>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="col-md-4">Bank</label>
+                        <div class="input-group col-md-8">
+                            <input type="text" class="form-control input-md" placeholder="Bank" id="Bank" ng-model="formData.Bank" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-6">
+                        <label class="col-md-4">Bank Account</label>
+                        <div class="input-group col-md-8">
+                            <input type="text" class="form-control input-md" placeholder="Bank Account" id="BankAccount" ng-model="formData.BankAccount" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="col-md-4">Tax Code</label>
+                        <div class="input-group col-md-8">
+                            <input type="text" class="form-control input-md" placeholder="Bank Account" id="BankAccount" ng-model="formData.TaxCode" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-6">
+                        <label class="col-md-4">Remark</label>
+                        <div class="input-group col-md-8">
+                            <input type="text" class="form-control input-md" placeholder="Remark" id="Remark" ng-model="formData.Remark" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <div style="margin-top:20px" class="input-group">
+                            <div class="col-md-6">
+                                <input type="submit" class="btn btn-primary" id="Update" ng-disabled="updateForm.$invalid" value="Update">
+                            </div>
+                            <!--<div class="col-md-6">
+                                <input type="button" class="btn btn-primary" value="Cancel" data-dismiss="modal" aria-hidden="true">
+                            </div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

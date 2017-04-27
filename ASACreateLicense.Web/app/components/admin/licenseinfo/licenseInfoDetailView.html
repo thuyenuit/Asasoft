@@ -1,0 +1,89 @@
+﻿<section class="content-header">
+    <h1>
+        License Information Detail
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a ui-sref="licenseinfolist"> License Information</a></li>
+        <li class="active"> License Information Detail</li>
+    </ol>
+</section>
+
+<section class="content">
+    <div class="col-md-12">
+        <div class="box box-solid">
+            <div class="box-header with-border">
+                <h3 class="box-title">Information</h3>
+            </div><!-- /.box-header -->
+            <div class="box-body">
+                <div class="col-lg-5 col-lg-offset-1">
+                    <div class="form-group">
+                        <span>Customer: <strong>{{licenseInfo.CustomerName}}</strong></span>                     
+                    </div>
+                    <div class="form-group">
+                        <span>Server name: <strong>{{licenseInfo.ServerName}}</strong></span>
+                    </div>
+                    <div class="form-group">
+                        <span>Contract number: <strong>{{licenseInfo.ContractNumber}}</strong></span>
+                    </div>
+                    <div class="form-group">
+                        <span>Contract type: <strong>{{licenseInfo.ContractTypeName}}</strong></span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-lg-offset-1">
+                    <div class="form-group">
+                        <span>Create date: <strong>{{licenseInfo.CreateDate | date: 'MM/dd/yyyy'}}</strong></span>
+                    </div>
+                    <div class="form-group">
+                        <span>Update date: <strong>{{licenseInfo.UpdateDate | date: 'MM/dd/yyyy'}}</strong></span>
+                    </div>
+                    <div class="form-group">
+                        <span>End date: <strong>{{licenseInfo.EndDate | date: 'MM/dd/yyyy'}}</strong></span>
+                    </div>
+                    <div class="form-group">
+                        <span>Status: <strong>{{licenseInfo.StatusLicenseName}}</strong></span>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <button type="button" ui-sref="licenseinfolist" class="btn btn-default pull-right"><i class="fa fa-undo"></i> Back</button>
+                </div>      
+            </div><!-- /.box-body -->
+        </div><!-- /.box -->
+    </div>
+
+    <div class="col-md-12">
+        <div class="box box-solid">
+            <div class="box-header with-border">
+                <p><code>Keys</code></p>   
+            </div><!-- /.box-header -->
+            <div class="box-body">
+                <div class="col-lg-12">
+                    <div class="form-group table-responsive" >
+                        <div class="form-group">
+                            <strong>{{licenseInfo.Keys}}</strong>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.box-body -->
+        </div><!-- /.box -->
+    </div>
+
+    <div class="col-md-12">
+        <div class="box box-solid">
+            <div class="box-header with-border">
+                <p><code>License</code></p>              
+            </div><!-- /.box-header -->
+            <div class="box-body">
+                <div class="col-lg-12">
+                    <div class="form-group table-responsive">
+                        <div class="form-group">
+                            <strong>{{licenseInfo.License}}</strong>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.box-body -->
+        </div><!-- /.box -->
+    </div>
+    <div class="clearfix"></div> 
+</section>
+

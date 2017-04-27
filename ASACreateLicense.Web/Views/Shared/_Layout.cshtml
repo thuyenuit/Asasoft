@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html ng-app="ASACreateLicense">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link href="~/Assets/Admin/libs/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="~/Assets/Admin/css/Site.css" rel="stylesheet" />
+
+    <script src="~/Assets/Admin/libs/angular/angular.js"></script>
+    <script src="~/Assets/Admin/libs/angular-ui-router/angular-route.js"></script>
+
+    <script src="~/App/app.js"></script>
+
+    <base href="/" />
+
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="listcustomerinfo">Danh sách khách hàng</a></li>
+                    <li><a href="addcustomerinfo">Thêm khách hàng</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <div ng-view></div>
+
+        @*@RenderBody()*@
+
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    <script src="~/Assets/Admin/libs/jquery/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Assets/Admin/libs/jquery/Scripts/bootstrap.js"></script>
+    <script src="~/Assets/Admin/libs/jquery/Scripts/respond.js"></script>
+</body>
+</html>
